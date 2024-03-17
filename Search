@@ -1,4 +1,4 @@
-<script>
+
   let timeoutId;
   document.getElementById('searchInput').addEventListener('input', function () {
     clearTimeout(timeoutId);
@@ -16,4 +16,3 @@
       });
     }, 300); // Adjust the debounce delay as needed (in milliseconds)
   });
-</script>
