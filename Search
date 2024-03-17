@@ -1,0 +1,19 @@
+<script>
+  let timeoutId;
+  document.getElementById('searchInput').addEventListener('input', function () {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      const searchQuery = this.value.trim().toLowerCase();
+      const collectionItems = document.querySelectorAll('.collection-item');
+      collectionItems.forEach(item => {
+        const title = item.querySelector('.title').textContent.toLowerCase();
+        const itemText = item.textContent.toLowerCase();
+        if (title.includes(searchQuery) || itemText.includes(searchQuery)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }, 300); // Adjust the debounce delay as needed (in milliseconds)
+  });
+</script>
